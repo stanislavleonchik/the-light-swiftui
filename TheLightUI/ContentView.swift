@@ -11,6 +11,9 @@ struct ContentView: View {
     
     @State var isTurnOn = true
     
+    var prefersStatusBarHidden: Bool {
+        return true
+    }
     var body: some View {
         ZStack {
             isTurnOn ? Color.white : Color.black
@@ -19,6 +22,7 @@ struct ContentView: View {
         .onTapGesture {
             isTurnOn.toggle()
         }
+        .statusBar(hidden: true)
     }
 }
 
